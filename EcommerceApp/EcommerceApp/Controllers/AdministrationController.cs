@@ -1,10 +1,12 @@
 ﻿using EcommerceApp.Areas.Identity.Data;
 using EcommerceApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceApp.Controllers
 {
+    [Authorize(Roles="Admin")]
     public class AdministrationController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
@@ -15,6 +17,13 @@ namespace EcommerceApp.Controllers
         {
             this.roleManager = roleManager;
             this.userManager = userManager;
+        }
+        
+        [HttpGet]
+        public IActionResult ListUsers()
+        {
+            var users = userManager.Users;
+            return View(users);
         }
 
         [HttpGet]
