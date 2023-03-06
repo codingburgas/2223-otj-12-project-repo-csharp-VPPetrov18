@@ -10542,27 +10542,24 @@
   },
   "packageFolders": {
     "C:\\Users\\VPPetrov18\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\EcommerceApp.csproj",
+      "projectUniqueName": "C:\\Users\\VPPetrov18\\Source\\Repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\EcommerceApp.csproj",
       "projectName": "EcommerceApp",
-      "projectPath": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\EcommerceApp.csproj",
+      "projectPath": "C:\\Users\\VPPetrov18\\Source\\Repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\EcommerceApp.csproj",
       "packagesPath": "C:\\Users\\VPPetrov18\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\obj\\",
+      "outputPath": "C:\\Users\\VPPetrov18\\Source\\Repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\VPPetrov18\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

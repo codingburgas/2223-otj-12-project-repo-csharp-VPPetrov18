@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "InOk+VSGk9AFSP7jwvH1FdIVND4SaVZr9rAQcxCDV2X7nrlM9gED1fYdyFy6eB4UL5UkzClbiF7tGe7wj3YF6Q==",
+  "dgSpecHash": "m7SbkmUbm9P/lvPFWUov+Q7qbEPeMLv+Z/8X/Lyuy6cQ1Iced3UD0Wzy6Zn0iyBolFmzy+OVATDoBphHwjucMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\EcommerceApp.csproj",
+  "projectFilePath": "C:\\Users\\VPPetrov18\\Source\\Repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\EcommerceApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\VPPetrov18\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\VPPetrov18\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

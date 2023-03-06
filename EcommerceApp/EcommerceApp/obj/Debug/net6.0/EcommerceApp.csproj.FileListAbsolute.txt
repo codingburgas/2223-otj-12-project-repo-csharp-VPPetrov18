@@ -1115,3 +1115,14 @@ C:\Users\VPPetrov18\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\Ecom
 C:\Users\VPPetrov18\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\VPPetrov18\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\VPPetrov18\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\Microsoft.Extensions.Identity.Core.dll
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\obj\Debug\net6.0\staticwebassets\msbuild.EcommerceApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\obj\Debug\net6.0\staticwebassets\msbuild.build.EcommerceApp.props
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.EcommerceApp.props
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.EcommerceApp.props
+C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\obj\Debug\net6.0\staticwebassets.pack.json
