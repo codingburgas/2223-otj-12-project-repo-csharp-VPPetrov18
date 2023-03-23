@@ -117,6 +117,7 @@ namespace EcommerceApp.Areas.Identity.Pages.Account.Manage
             if (Input.NewEmail != email)
             {
                 var result = await _userManager.SetEmailAsync(user, Input.NewEmail);
+                var result2 = await _userManager.SetUserNameAsync(user, Input.NewEmail);
                 if (!result.Succeeded)
                 {
                     foreach (var error in result.Errors)
@@ -126,12 +127,22 @@ namespace EcommerceApp.Areas.Identity.Pages.Account.Manage
                     await LoadAsync(user);
                     return Page();
                 }
+
+                if (!result2.Succeeded)
+                {
+                    foreach (var error in result2.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    await LoadAsync(user);
+                    return Page();
+                }
                 await _signInManager.RefreshSignInAsync(user);
-                StatusMessage = "Your email has been updated.";
+                StatusMessage = "Your email and username has been updated.";
             }
             else
             {
-                StatusMessage = "Your email is unchanged.";
+                StatusMessage = "Your email and username is unchanged.";
             }
             return RedirectToPage();
         }
