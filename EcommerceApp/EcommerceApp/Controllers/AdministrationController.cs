@@ -104,7 +104,7 @@ namespace EcommerceApp.Controllers
             {
                 Id = user.Id,
                 Email = user.Email,
-                UserName = user.UserName,
+                UserName = user.Email,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Roles = userRoles
@@ -127,7 +127,7 @@ namespace EcommerceApp.Controllers
             else
             {
                 user.Email = model.Email;
-                user.UserName = model.UserName;
+                user.UserName = model.Email;
                 user.FirstName = model.FirstName;
                 user.LastName = model.LastName;
 
