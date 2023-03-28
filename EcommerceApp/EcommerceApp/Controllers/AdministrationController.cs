@@ -3,6 +3,7 @@ using EcommerceApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Runtime.ConstrainedExecution;
 
 namespace EcommerceApp.Controllers
@@ -12,12 +13,15 @@ namespace EcommerceApp.Controllers
     {
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> signInManager;
 
         public AdministrationController(RoleManager<IdentityRole> roleManager,
-                                        UserManager<ApplicationUser> userManager)
+                                        UserManager<ApplicationUser> userManager,
+                                        SignInManager<ApplicationUser> signInManager)
         {
             this.roleManager = roleManager;
             this.userManager = userManager;
+            this.signInManager = signInManager;
         }
 
         [HttpPost]
@@ -113,10 +117,38 @@ namespace EcommerceApp.Controllers
             return View(model);
         }
 
+        
 
         [HttpPost]
         public async Task<IActionResult> EditUser(EditUserViewModel model)
         {
+            var adminEmail = Request.Form["adminEmail"];
+            var adminPassword = Request.Form["adminPassword"];
+            var userId = Request.Form["userId"];
+            var userFirstName = Request.Form["userFirstName"];
+            var userLastName = Request.Form["userLastName"];
+            var userEmail = Request.Form["userEmail"];
+
+            //The code for checking if the email and password are from the admin
+
+            // Get the current user
+            var currentUser = await userManager.GetUserAsync(User);
+
+            // Check if the current user is an admin
+            if (!await userManager.IsInRoleAsync(currentUser, "Admin"))
+            {
+                return Forbid(); // Return 403 Forbidden if the current user is not an admin
+            }
+
+            // Check if the provided admin email and password are correct
+            var resultAdmin = await signInManager.PasswordSignInAsync(adminEmail, adminPassword, false, lockoutOnFailure: false);
+            if (!resultAdmin.Succeeded)
+            {
+                return BadRequest(new { message = "Invalid admin email or password" }); // Return 400 Bad Request if the provided admin email or password are incorrect
+            }
+
+
+            //The code for the user that we wanna edit
             var user = await userManager.FindByIdAsync(model.Id);
 
             if (user == null)
@@ -126,10 +158,10 @@ namespace EcommerceApp.Controllers
             }
             else
             {
-                user.Email = model.Email;
-                user.UserName = model.Email;
-                user.FirstName = model.FirstName;
-                user.LastName = model.LastName;
+                user.Email = userEmail;
+                user.UserName = userEmail;
+                user.FirstName = userFirstName;
+                user.LastName = userLastName;
 
                 var result = await userManager.UpdateAsync(user);
 
@@ -146,6 +178,8 @@ namespace EcommerceApp.Controllers
                 return View(model);
             }
         }
+
+
 
         [HttpGet]
         public IActionResult CreateRole()

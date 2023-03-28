@@ -1,12 +1,15 @@
 ﻿@model EditUserViewModel
-
+ 
 @{
     ViewBag.Title = "Edit User";
 }
+ <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
 <h1>Edit User</h1>
-
-<form method="post" class="mt-3">
+ 
+<form method="post" class="mt-3"  id="editUserForm">
     <div class="form-group row">
         <label asp-for="Id" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
@@ -20,14 +23,8 @@
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
     </div>
-
-  @*  <div class="form-group row">
-        <label asp-for="UserName" class="col-sm-2 col-form-label"></label>
-        <div class="col-sm-10">
-            <input asp-for="UserName" class="form-control">
-            <span asp-validation-for="UserName" class="text-danger"></span>
-        </div>
-    </div>*@
+ 
+ 
     <div class="form-group row">
         <label asp-for="FirstName" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
@@ -40,19 +37,34 @@
             <input asp-for="LastName" class="form-control">
         </div>
     </div>
-
+ 
     <div asp-validation-summary="All" class="text-danger"></div>
-
-
-
+ 
+ 
+ 
     <div class="form-group row">
         <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Update</button>
+ 
+            <button class="btn btn-primary" onclick="openForm()">Update</button>
+            <div id="myForm">
+                <div id="myFormContent">
+                    <span class="close" onclick="closeForm()">&times;</span>
+                    <h2>Update a user</h2>
+                    <form onsubmit="submitForm(event)">
+                        <label for="email">AdminEmail:</label>
+                        <input type="email" id="email" name="AdminEmail" required><br><br>
+                        <label for="password">AdminPassword:</label>
+                        <input type="password" id="password" name="Adminpassword" required><br><br>
+                        <button type="submit" class="btn btn-primary" onclick="submitForm(event)">Update</button>
+                    </form>
+                </div>
+            </div>
+ 
             <a asp-action="ListUsers" class="btn btn-primary">Cancel</a>
         </div>
     </div>
-
-
+ 
+ 
     <div class="card">
         <div class="card-header">
             <h3>User Roles</h3>
@@ -76,5 +88,58 @@
             </a>
         </div>
     </div>
-
+ 
  </form>
+ 
+ 
+ 
+@section Scripts {
+    <script>
+        // Function to open the pop-up window
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        // Function to close the pop-up window
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+
+        // Function to handle form submission
+        function submitForm(event) {
+            event.preventDefault(); // prevent default form behavior
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // get user data from main form
+            var userId = document.getElementById("Id").value;
+            var userFirstName = document.getElementById("FirstName").value;
+            var userLastName = document.getElementById("LastName").value;
+            var userEmail = document.getElementById("Email").value;
+
+            // make AJAX call to AdministrationController's method
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("EditUser", "Administration")',
+                data: {
+                    adminEmail: email,
+                    adminPassword: password,
+                    userId: userId,
+                    userFirstName: userFirstName,
+                    userLastName: userLastName,
+                    userEmail: userEmail
+                },
+                success: function (result) {
+                    // close the pop-up window and refresh the page
+                    closeForm();
+                    location.reload();
+                },
+                error: function (error) {
+                    alert("An error occurred while updating the user.");
+                }
+            });
+        }
+    </script>
+}
+
+
