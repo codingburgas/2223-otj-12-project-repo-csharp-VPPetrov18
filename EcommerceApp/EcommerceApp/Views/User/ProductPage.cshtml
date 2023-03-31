@@ -1,0 +1,11 @@
+﻿@model ProductsViewModel
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/ProductPage.css">
+</head>
+
+
+@{
+    var imgPath = "/Images/Products/" + (@Model.ImageTitle + ".jpeg");
+}
+<img src="@imgPath" alt="@Model.ProductName">

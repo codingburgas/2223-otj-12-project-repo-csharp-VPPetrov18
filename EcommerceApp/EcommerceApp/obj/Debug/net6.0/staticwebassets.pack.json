@@ -5,6 +5,42 @@
       "PackagePath": "staticwebassets\\EcommerceApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\logo.png",
+      "PackagePath": "staticwebassets\\Images\\Products\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (2).jpeg",
+      "PackagePath": "staticwebassets\\Images\\Products\\mockup (2).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (2-1).jpeg",
+      "PackagePath": "staticwebassets\\Images\\Products\\mockup (2-1).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (2-2).jpeg",
+      "PackagePath": "staticwebassets\\Images\\Products\\mockup (2-2).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (3).jpeg",
+      "PackagePath": "staticwebassets\\Images\\Products\\mockup (3).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (3-1).jpeg",
+      "PackagePath": "staticwebassets\\Images\\Products\\mockup (3-1).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (3-2).jpeg",
+      "PackagePath": "staticwebassets\\Images\\Products\\mockup (3-2).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\ProductPage.css",
+      "PackagePath": "staticwebassets\\css\\ProductPage.css"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\ProductsStyle.css",
+      "PackagePath": "staticwebassets\\css\\ProductsStyle.css"
+    },
+    {
       "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

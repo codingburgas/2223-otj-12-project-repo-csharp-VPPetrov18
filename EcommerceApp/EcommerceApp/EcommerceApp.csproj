@@ -18,4 +18,15 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.12" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Images\Products\logo.png" />
+    <None Include="wwwroot\Images\Products\mockup %281%29.jpeg" />
+    <None Include="wwwroot\Images\Products\mockup %282%29.jpeg" />
+    <None Include="wwwroot\Images\Products\mockup %283%29.jpeg" />
+    <None Include="wwwroot\Images\Products\mockup %284%29.jpeg" />
+    <None Include="wwwroot\Images\Products\mockup %285%29.jpeg" />
+    <None Include="wwwroot\Images\Products\mockup %286%29.jpeg" />
+    <None Include="wwwroot\Images\Products\mockup.jpeg" />
+  </ItemGroup>
+
 </Project>
