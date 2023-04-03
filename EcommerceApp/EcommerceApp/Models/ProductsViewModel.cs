@@ -14,7 +14,7 @@
         public bool SizeXL { get; set; }
     
         public string Color { get; set; }
-        public string Rating { get; set; }
+        public double Rating { get; set; }
         public float Price { get; set; }
     }
 }

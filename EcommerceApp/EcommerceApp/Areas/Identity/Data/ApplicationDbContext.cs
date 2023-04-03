@@ -11,6 +11,7 @@ namespace EcommerceApp.Areas.Identity.Data;
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
     public DbSet<ProductsViewModel> ApplicationProducts { get; set; }
+    public DbSet<ProductReview> ProductReviews { get; set; }
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)

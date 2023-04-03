@@ -2,10 +2,253 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="~/css/ProductPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
+<div class="product-container">
+   
+        @{
+            var imgPath1 = "/Images/Products/" + (@Model.ImageTitle + ".jpeg");
+            var imgPath2 = "/Images/Products/" + (@Model.ImageTitle + "-1.jpeg");
+            var imgPath3 = "/Images/Products/" + (@Model.ImageTitle + "-2.jpeg");
+        }
 
-@{
-    var imgPath = "/Images/Products/" + (@Model.ImageTitle + ".jpeg");
+ 
+    <div class="slideshow-container">
+
+        <div class="mySlides">
+            <div class="numbertext">1 / 3</div>
+                <img src="@imgPath1" style="width:100%">
+
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">2 / 3</div>
+                <img src="@imgPath2" style="width:100%">
+
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3 / 3</div>
+                <img src="@imgPath3" style="width:100%">
+
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+
+    <div class="product-details">
+        <h1>@Model.ProductName</h1>
+        <p>@Model.Description</p>
+        <p>Color: @Model.Color</p>
+        <p>Rating <span class="fa fa-star checked"></span>: @Model.Rating/5
+        
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a style="cursor:pointer; color:blue;" onclick="openForm()">Give a review</a>
+            }
+        </p>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+
+                
+                <div id="myForm">
+                    <div id="myFormContent">
+                        <span class="close" onclick="closeForm()">&times;</span>
+                        <h2>Give your opinion about the product</h2>
+                        <form onsubmit="submitForm(event)">
+                            <input type="hidden" name="productId" value="@Model.Id" />
+                            <div class="form-group">
+                                <label for="grade">Grade:</label>
+                                <br/>
+                                
+                                <div class="rate">
+                                    <input type="radio" id="star5" name="rate" value="5" />
+                                    <label for="star5" title="text">5 stars</label>
+                                    <input type="radio" id="star4" name="rate" value="4" />
+                                    <label for="star4" title="text">4 stars</label>
+                                    <input type="radio" id="star3" name="rate" value="3" />
+                                    <label for="star3" title="text">3 stars</label>
+                                    <input type="radio" id="star2" name="rate" value="2" />
+                                    <label for="star2" title="text">2 stars</label>
+                                    <input type="radio" id="star1" name="rate" value="1" />
+                                    <label for="star1" title="text">1 star</label>
+                                </div>
+                            </div>
+                            <br/>
+                                <br />
+                            <div class="form-group">
+                                <label for="description">Description:</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                            <br/><br/>
+                            <button type="submit" class="btn btn-primary" onclick="submitForm(event)">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+       
+
+
+
+
+        <b><p>Price: @Model.Price.ToString("C")</p></b>
+        <div class="product-sizes">
+            <form>
+                <label for="size">Size:</label>
+                <select id="size" name="size">
+                    @if (Model.SizeS)
+                    {
+                        <option value="S">S</option>
+                    }
+                    @if (Model.SizeM)
+                    {
+                        <option value="M">M</option>
+                    }
+                    @if (Model.SizeL)
+                    {
+                        <option value="L">L</option>
+                    }
+                    @if (Model.SizeXL)
+                    {
+                        <option value="XL">XL</option>
+                    }
+                </select>
+            </form>
+        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+        <div class="discount-container">
+            <label for="discount-code">Discount Code:</label>
+            <input type="text" id="discount-code" name="discount-code">
+            <button class="apply-discount">Apply</button>
+            <p id="discount-message"></p>
+        </div>
+        }
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        //For the discount code
+        $(function () {
+            $('.apply-discount').on('click', function (e) {
+                e.preventDefault();
+
+                var discountCode = $('#discount-code').val().toUpperCase();
+                var discountMessage = $('#discount-message');
+
+                // check if the discount code is valid
+                if (discountCode === 'WELCOME') {
+                    // apply 20% discount to the price
+                    var newPrice = parseFloat('@Model.Price') * 0.8;
+                    $('.product-details p:contains("Price:")').html('Price: $' + newPrice.toFixed(2).toString());
+
+
+                    discountMessage.text('The code is successfully applied!');
+                    discountMessage.css('color', 'green');
+                }
+                else {
+                    discountMessage.text('Invalid code!');
+                    discountMessage.css('color', 'red');
+                }
+
+
+            });
+        });
+
+
+
+
+        //For the slideshow
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+
+
+
+
+
+
+        // Function to open the pop-up window for the review
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        // Function to close the pop-up window
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+
+
+
+        //Submitting the info from the review and sending it to the controller
+        function submitForm(event) {
+            event.preventDefault(); // prevent the default form submission
+
+            // create a new FormData object
+            const formData = new FormData();
+
+            // get the form data and add it to the FormData object
+            const productId = document.querySelector('input[name="productId"]').value;
+            const grade = document.querySelector('input[name="rate"]:checked').value;
+            const description = document.querySelector('textarea[name="description"]').value;
+            formData.append("productId", productId);
+            formData.append("grade", grade);
+            formData.append("description", description);
+
+            // send an AJAX request to the server
+            fetch('@Url.Action("SubmitProductReview", "User")', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // redirect to the product page
+                        window.location.href = '@Url.Action("ProductPage", "User")';
+                    } else {
+                        // handle error
+                        alert('You already submit a review for this product');
+                        console.error(response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+    </script>
 }
-<img src="@imgPath" alt="@Model.ProductName">

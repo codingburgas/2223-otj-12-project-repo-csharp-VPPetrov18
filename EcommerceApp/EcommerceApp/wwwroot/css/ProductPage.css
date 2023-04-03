@@ -1,4 +1,174 @@
-﻿img {
-    width: 500px;
-    height:700px;
+﻿.product-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+    border-style: groove;
+    border-width:5px;
 }
+
+.product-image {
+    flex: 1;
+}
+
+    .product-image img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+.product-details {
+    flex: 1;
+    margin-left: 150px;
+    margin-top:100px;
+}
+
+    .product-details h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .product-details p {
+        margin-bottom: 10px;
+    }
+
+.product-sizes label {
+    margin-right: 10px;
+}
+
+.product-sizes select {
+    margin-right: 20px;
+}
+
+.add-to-cart {
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+    .add-to-cart:hover {
+        background-color: #fff;
+        color: #000;
+        border: 2px solid #000;
+    }
+
+
+.checked {
+    color: orange;
+}
+
+
+
+
+
+
+.mySlides {
+    display: none
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: rgba(0,0,0,0.8);
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next, .text {
+        font-size: 11px
+    }
+}
+
+
+
+
+
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+    .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+    }
+
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+    .rate > input:checked ~ label {
+        color: #ffc700;
+    }
+
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+    }
+
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }

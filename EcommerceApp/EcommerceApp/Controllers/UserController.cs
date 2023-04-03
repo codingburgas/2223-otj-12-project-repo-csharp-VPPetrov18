@@ -1,7 +1,9 @@
 ﻿using EcommerceApp.Areas.Identity.Data;
 using EcommerceApp.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace EcommerceApp.Controllers
 {
@@ -63,6 +65,64 @@ namespace EcommerceApp.Controllers
             // pass the view model to the view
             return View(viewModel);
         }
+
+
+
+
+
+        [HttpPost]
+        public IActionResult SubmitProductReview(int productId, int grade, string description)
+        {
+            // get the current user's id
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // check if the user has already reviewed this product
+            var existingReview = _context.ProductReviews.FirstOrDefault(r => r.ProductId == productId && r.UserId == userId);
+
+            if (existingReview != null)
+            {
+                // user has already reviewed this product, return an error message or redirect to an error page
+                return BadRequest(new { message = "You have already reviewed this product." });
+            }
+
+            // create a new ProductReview instance with the data submitted by the user
+            var review = new ProductReview
+            {
+                UserId = userId,
+                ProductId = productId,
+                Grade = grade,
+                Description = description
+            };
+
+            // add the new review to the database and save changes
+            _context.ProductReviews.Add(review);
+            _context.SaveChanges();
+
+
+            // Retrieve all reviews for the current product
+            List<ProductReview> reviews = _context.ProductReviews
+                .Where(r => r.ProductId == productId)
+                .ToList();
+
+            // Calculate the average of the grades
+            double averageGrade = reviews.Average(r => r.Grade);
+
+            // Update the rating field in the ApplicationProducts table
+            var product = _context.ApplicationProducts
+                .Where(p => p.Id == productId)
+                .FirstOrDefault();
+
+            if (product != null)
+            {
+                product.Rating = averageGrade;
+                _context.SaveChanges();
+            }
+
+
+            return RedirectToAction("ProductPage", new { id = productId });
+        }
+
+        
     }
 
 }
