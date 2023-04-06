@@ -2,77 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 <head>
-    <style>
-
-        .navCont {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            margin: 0;
-            padding: 0;
-        }
-
-           
-
-            .navCont a.shop-downlink {
-                color: #fff;
-                text-decoration: none;
-                border-bottom: none;
-                transition: color 0.3s ease;
-            }
-
-                .navCont a.shop-downlink:hover {
-                    color: #BABABA;
-                }
-
-
-
-        .video-container {
-        position: relative;
-        height: 70vh;
-        overflow: hidden;
-}
-
-    #myVideo {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    min-width: 100%;
-    min-height: 100%;
-}
-
-        .content {
-            margin-top:280px;
-            position: relative;
-            z-index: 1;
-            color: white;
-            
-            
-        }
-         
-        .content-center{
-                    text-align: center;
-        }
-       
-
-               a.shop-link {
-                color: #fff;
-                text-decoration: none;
-                border-bottom: none;
-                transition: color 0.3s ease;
-            }
-
-           
-            a.shop-link:hover {
-                        color:#BABABA;
-            }
-
-          
-
-     
-    </style>
+    <link href="~/css/index.css" rel="stylesheet" />
 </head>
 <div class="video-container">
     <video autoplay muted loop id="myVideo">
@@ -85,10 +15,10 @@
             <a href="@Url.Action("Products", "User")" class="shop-link">
         <img src="@Url.Content("~/Images/logo2.gif")" alt="Logo" style="width:248px;height:248px;">
         </a>
-        <h1>
+        <h2>
             <!-- Add the "shop-link" class to the anchor tag -->
-            <a href="@Url.Action("Products", "User")" class="shop-link">SHOP</a>
-        </h1>
+            <a href="@Url.Action("Products", "User")" class="shop-link">[ENTER]</a>
+        </h2>
         </div>
 
         </div>

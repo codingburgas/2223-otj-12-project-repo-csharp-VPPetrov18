@@ -1,0 +1,98 @@
+﻿
+.navCont {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.navCont a.shop-downlink {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+    transition: color 0.3s ease;
+}
+
+    .navCont a.shop-downlink:hover {
+        color: #BABABA;
+    }
+
+
+
+.video-container {
+    position: relative;
+   
+    overflow: hidden;
+}
+
+/* For screens smaller than 768px (e.g. laptops and tablets) */
+@media (min-width:1068px) {
+    .video-container {
+        height: 70vh;
+    }
+}
+
+/* For screens larger than or equal to 768px (e.g. desktops) */
+@media (min-width: 768px) {
+    .video-container {
+        height: 65vh;
+    }
+}
+
+
+
+#myVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+/* For screens smaller than 768px (e.g. laptops and tablets) */
+@media (min-width:1068px) {
+    .content {
+        margin-top: 280px;
+    }
+}
+
+/* For screens larger than or equal to 768px (e.g. desktops) */
+@media (min-width: 768px) {
+    .content {
+        margin-top: 200px;
+    }
+}
+
+.content-center {
+    text-align: center;
+}
+
+
+a.shop-link {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+    transition: color 0.3s ease;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: Verdana black, sans-serif;
+}
+
+
+    a.shop-link:hover {
+        color: #BABABA;
+    }
+
+
+
+

@@ -69,14 +69,44 @@ body {
     margin-right: 2rem;
 }
 
-.nav-link {
-    color: #fff;
-    text-decoration: none;
-    border-bottom: none;
-    transition: color 0.3s ease;
+
+
+.custom-class {
+    margin-top:-80px; /* adjust this value as needed */
 }
 
-    .nav-link:hover {
+#register, #login {
+    margin-right: 10px; /* Adds 10px margin to the right of the links */
+    
+}
+
+
+
+.register-link,
+.login-link {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+    text-decoration: none;
+}
+
+    .register-link:hover,
+    .login-link:hover {
         color: #BABABA;
     }
 
+#logout {
+    background: none;
+    border: none;
+
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+    color: white;
+    text-decoration: none;
+}
+
+    #logout:hover {
+        color: #BABABA;
+    }

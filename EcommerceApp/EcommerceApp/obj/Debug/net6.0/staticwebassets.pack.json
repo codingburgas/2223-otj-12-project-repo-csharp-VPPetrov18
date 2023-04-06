@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\EcommerceApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Backgrounds\\ProductsBackground.jpg",
+      "PackagePath": "staticwebassets\\Backgrounds\\ProductsBackground.jpg"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Backgrounds\\video2.mp4",
+      "PackagePath": "staticwebassets\\Backgrounds\\video2.mp4"
+    },
+    {
       "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\logo.png",
       "PackagePath": "staticwebassets\\Images\\Products\\logo.png"
     },
@@ -21,16 +29,36 @@
       "PackagePath": "staticwebassets\\Images\\Products\\mockup (2-2).jpeg"
     },
     {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (3)-1.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Products\\mockup (3)-1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (3)-2.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Products\\mockup (3)-2.jpeg"
+    },
+    {
       "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (3).jpeg",
       "PackagePath": "staticwebassets\\Images\\Products\\mockup (3).jpeg"
     },
     {
-      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (3-1).jpeg",
-      "PackagePath": "staticwebassets\\Images\\Products\\mockup (3-1).jpeg"
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\StaticLogo.png",
+      "PackagePath": "staticwebassets\\Images\\StaticLogo.png"
     },
     {
-      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\Products\\mockup (3-2).jpeg",
-      "PackagePath": "staticwebassets\\Images\\Products\\mockup (3-2).jpeg"
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\logo.gif",
+      "PackagePath": "staticwebassets\\Images\\logo.gif"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\logo2.gif",
+      "PackagePath": "staticwebassets\\Images\\logo2.gif"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\logo3.gif",
+      "PackagePath": "staticwebassets\\Images\\logo3.gif"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\Index.css",
+      "PackagePath": "staticwebassets\\css\\Index.css"
     },
     {
       "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\ProductPage.css",

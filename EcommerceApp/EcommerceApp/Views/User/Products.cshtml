@@ -10,7 +10,7 @@
 
 <br />
 <br />
-
+<div class="products-container">
 @foreach (var product in Model)
 {
     var imgPath = "/Images/Products/" + (@product.ImageTitle + ".jpeg");
@@ -41,7 +41,7 @@
         </div>
     </div>
 }
-
+</div>
 @section Scripts{
     <script>
         $('.product').hover(function () {

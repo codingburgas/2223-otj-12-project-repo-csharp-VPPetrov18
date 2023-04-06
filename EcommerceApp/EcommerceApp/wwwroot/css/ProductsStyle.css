@@ -1,4 +1,10 @@
-﻿
+﻿body {
+    background-image: url('/Backgrounds/ProductsBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+}
 
 h2 {
     font-family: 'Roboto', sans-serif; /* Use your chosen font here */
@@ -92,4 +98,16 @@ h2 {
         .product:hover .product-info .view-button:hover {
             background-color: #b09606;
         }
+
+
+
+
+
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 
