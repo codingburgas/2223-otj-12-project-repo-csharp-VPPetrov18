@@ -57,3 +57,26 @@ body {
         cursor: pointer;
     }
 
+
+
+
+.navbar {
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-brand {
+    margin-right: 2rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+    transition: color 0.3s ease;
+}
+
+    .nav-link:hover {
+        color: #BABABA;
+    }
+
