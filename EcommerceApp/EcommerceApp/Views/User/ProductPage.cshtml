@@ -9,9 +9,9 @@
 <div class="product-container">
    
         @{
-            var imgPath1 = "/Images/Products/" + (@Model.ImageTitle + ".jpeg");
-            var imgPath2 = "/Images/Products/" + (@Model.ImageTitle + "-1.jpeg");
-            var imgPath3 = "/Images/Products/" + (@Model.ImageTitle + "-2.jpeg");
+            var imgPath1 = "/Images/Products/" + (@Model.ImageTitle + ".png");
+            var imgPath2 = "/Images/Products/" + (@Model.ImageTitle + "-1.png");
+            var imgPath3 = "/Images/Products/" + (@Model.ImageTitle + "-2.png");
         }
 
  
@@ -47,10 +47,10 @@
         <p>@Model.Description</p>
         <p>Color: @Model.Color</p>
         <p>Rating <span class="fa fa-star checked"></span>: @Model.Rating/5
-        
+            &nbsp;
             @if (User.Identity.IsAuthenticated)
             {
-                <a style="cursor:pointer; color:blue;" onclick="openForm()">Give a review</a>
+                <b><a style="cursor:pointer; color:white;" onclick="openForm()">Give a review</a></b>
             }
         </p>
 
@@ -88,7 +88,16 @@
                                 <textarea class="form-control" id="description" name="description"></textarea>
                             </div>
                             <br/><br/>
-                            <button type="submit" class="btn btn-primary" onclick="submitForm(event)">Submit</button>
+                            <div class="myButton">
+                                <button type="submit" onclick="submitForm(event)">
+                                    Submit
+                                    <div class="arrow-wrapper">
+                                        <div class="arrow"></div>
+
+                                    </div>
+                                
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>

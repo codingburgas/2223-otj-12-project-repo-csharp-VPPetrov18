@@ -1,9 +1,26 @@
-﻿.product-container {
+﻿body {
+    background-image: url('/Backgrounds/ProductsBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+}
+
+
+
+#myForm {
+    color: black;
+}
+.myFormContent {
+    background-color: black;
+}
+
+.product-container {
     display: flex;
     justify-content: space-between;
     margin: 50px;
-    border-style: groove;
-    border-width:5px;
+    /* border-style: groove;
+    border-width:5px;*/
 }
 
 .product-image {
@@ -19,6 +36,7 @@
     flex: 1;
     margin-left: 150px;
     margin-top:100px;
+    color:white;
 }
 
     .product-details h1 {
@@ -172,3 +190,66 @@
     .rate > label:hover ~ input:checked ~ label {
         color: #c59b08;
     }
+
+
+
+
+.myButton button {
+    --primary-color: #645bff;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+}
+
+    .myButton button .arrow-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .myButton button .arrow {
+        margin-top: 1px;
+        width: var(--arrow-width);
+        background: var(--primary-color);
+        height: var(--arrow-stroke);
+        position: relative;
+        transition: 0.2s;
+    }
+
+        .myButton button .arrow::before {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            border: solid var(--secondary-color);
+            border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+            display: inline-block;
+            top: -3px;
+            right: 3px;
+            transition: 0.2s;
+            padding: 3px;
+            transform: rotate(-45deg);
+        }
+
+    .myButton button:hover {
+        background-color: var(--hover-color);
+    }
+
+        .myButton button:hover .arrow {
+            background: var(--secondary-color);
+        }
+
+            .myButton button:hover .arrow:before {
+                right: 0;
+            }

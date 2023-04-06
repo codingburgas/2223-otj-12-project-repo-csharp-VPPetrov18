@@ -13,7 +13,7 @@
 <div class="products-container">
 @foreach (var product in Model)
 {
-    var imgPath = "/Images/Products/" + (@product.ImageTitle + ".jpeg");
+    var imgPath = "/Images/Products/" + (@product.ImageTitle + ".png");
     <div class="product">
         <img src="@imgPath" alt="@product.ProductName">
         <div class="product-info">

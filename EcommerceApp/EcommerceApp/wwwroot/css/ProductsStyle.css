@@ -7,13 +7,16 @@
 }
 
 h2 {
-    font-family: 'Roboto', sans-serif; /* Use your chosen font here */
-    font-size: 16px; /* Adjust the font size as needed */
-    font-weight: bold; /* Use bold font weight for emphasis */
-    letter-spacing: 2px; /* Add some letter spacing for clarity */
-    text-transform: uppercase; /* Use uppercase for a more dramatic effect */
-    color: #333; /* Use a color that matches your brand */
+    font-family: 'DeathRattle BB', cursive;  
+    font-size: 24px; 
+    font-weight: bold; 
+    letter-spacing: 4px; 
+    text-transform: uppercase;
+    color: white; 
     text-align: center;
+    text-shadow: 2px 2px 2px #666; 
+    padding: 10px 0; 
+    margin: 20px 0; 
 }
 
 
@@ -26,7 +29,7 @@ h2 {
     height: 450px;
     margin: 10px;
     padding: 10px;
-    border: 2px solid #ccc;
+   /* border: 2px solid #ccc;*/
     text-align: center;
     transition: all 0.3s ease-out;
 }
@@ -48,7 +51,7 @@ h2 {
         width: 95%;
         padding: 10px;
         background-color: rgb();
-        color: #000000;
+        color: white;
         text-align: center;
     }
 
@@ -63,7 +66,7 @@ h2 {
 
         .product .product-info .view-button {
             display: inline-block;
-            background-color: #dfbe08;
+            background-color: #0a0a0a;
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
@@ -96,7 +99,7 @@ h2 {
     }
 
         .product:hover .product-info .view-button:hover {
-            background-color: #b09606;
+            background-color: black;
         }
 
 
@@ -111,3 +114,6 @@ h2 {
     align-items: center;
 }
 
+.size-button{
+    color:white;
+}
