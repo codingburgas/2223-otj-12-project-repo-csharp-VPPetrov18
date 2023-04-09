@@ -1,0 +1,103 @@
+﻿body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/Backgrounds/ProductsBackground.jpg');
+}
+
+h1{
+    color:#fff;
+}
+
+h2 {
+    color: #fff;
+}
+
+h3
+{
+    color:#fff;
+}
+
+hr{
+    color:#fff;
+}
+
+a{
+    color:#fff;
+}
+
+#profile
+{
+    color:#fff;
+}
+    #profile:hover {
+        color: #BABABA;
+    }
+
+#email {
+    color: #fff;
+}
+    #email:hover {
+        color: #BABABA;
+    }
+
+#change-password {
+    color: #fff;
+}
+    #change-password:hover {
+        color: #BABABA;
+    }
+.nav-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-item a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+.UserButton button {
+    padding: 0.8em 1.8em;
+    border: 2px solid #fff;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #fff;
+}
+
+    .UserButton button::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #3607ac;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+    .UserButton button:hover::before {
+    width: 105%;
+}
+
+    .UserButton button:hover {
+    color: #fff;
+}
