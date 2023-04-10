@@ -122,7 +122,19 @@ namespace EcommerceApp.Controllers
             return RedirectToAction("ProductPage", new { id = productId });
         }
 
-        
+
+
+        public ActionResult Sizing()
+        {
+            return View();
+        }
+
+
+        public ActionResult Policies()
+        {
+            return View();
+        }
+
     }
 
 }

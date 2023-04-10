@@ -4,6 +4,11 @@
 <head>
     <link href="~/css/index.css" rel="stylesheet" />
 </head>
+
+
+
+
+
 <div class="video-container">
     <video autoplay muted loop id="myVideo">
         <source src="@Url.Content("~/Backgrounds/video2.mp4")" type="video/mp4">
@@ -11,12 +16,23 @@
     </video>
 
     <div class="content">
+        @if (!User.Identity.IsAuthenticated)
+        {
+
+
+            <div class="blur"></div>
+            <div class="popup">
+                <img src="@Url.Content("~/Images/DiscountPopUp.png")" alt="Pop Up Image">
+                <span class="close">&times;</span>
+            </div>
+
+        }
         <div class="content-center">
             <a href="@Url.Action("Products", "User")" class="shop-link">
         <img src="@Url.Content("~/Images/logo2.gif")" alt="Logo" style="width:248px;height:248px;">
         </a>
         <h2>
-            <!-- Add the "shop-link" class to the anchor tag -->
+           
             <a href="@Url.Action("Products", "User")" class="shop-link">[ENTER]</a>
         </h2>
         </div>
@@ -27,9 +43,27 @@
 </div>
 <div class="navCont">
    <h5><a href="@Url.Action("Products", "User")" class="shop-downlink">PRODUCTS</a></h5>
-    <h5><a href="#" class="shop-downlink">SIZING</a></h5>
-    <h5><a href="#" class="shop-downlink">POLICIES</a></h5>
+    <h5><a href="@Url.Action("Sizing", "User")" class="shop-downlink">SIZING</a></h5>
+    <h5><a href="@Url.Action("Policies", "User")" class="shop-downlink">POLICIES</a></h5>
 </div>
            
 
 
+@section Scripts {
+        <script>
+        var popup = document.querySelector(".popup");
+        var blur = document.querySelector(".blur");
+        var close = document.querySelector(".close");
+
+        close.addEventListener("click", function () {
+            popup.style.display = "none";
+            blur.style.display = "none";
+        });
+
+        blur.addEventListener("click", function () {
+            popup.style.display = "none";
+            blur.style.display = "none";
+        });
+      
+            </script>
+}
