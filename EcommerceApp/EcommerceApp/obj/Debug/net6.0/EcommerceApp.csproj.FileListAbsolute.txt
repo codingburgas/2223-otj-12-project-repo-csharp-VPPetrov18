@@ -693,7 +693,6 @@ C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\Ecommerce
 C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\System.Data.dll
 C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\System.Diagnostics.Contracts.dll
 C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\System.Diagnostics.Debug.dll
-C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\System.Diagnostics.DiagnosticSource.dll
 C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\System.Diagnostics.EventLog.dll
 C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\System.Diagnostics.FileVersionInfo.dll
 C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\refs\System.Diagnostics.Process.dll
@@ -1126,3 +1125,8 @@ C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\Ecom
 C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.EcommerceApp.props
 C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.EcommerceApp.props
 C:\Users\VPPetrov18\Source\Repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\FakeItEasy.dll
+C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\FluentAssertions.dll
+C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\petro\source\repos\2223-otj-12-project-repo-csharp-VPPetrov18\EcommerceApp\EcommerceApp\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll

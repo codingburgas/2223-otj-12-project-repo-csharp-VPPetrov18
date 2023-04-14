@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9KjIB7Ep1WmCuk6ejxvs2WjLya+mPU9jttjgq4j5ugo=",
+  "Hash": "K48KQE22AQAWtazCbIN4Pfuz7LkNfxTy46KqJGQ0z7E=",
   "Source": "EcommerceApp",
   "BasePath": "_content/EcommerceApp",
   "Mode": "Default",
@@ -1460,6 +1460,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Products\\T-Shirt-2.png"
+    },
+    {
+      "Identity": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\SizeTables\\HoodieSize.jpg",
+      "SourceId": "EcommerceApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\",
+      "BasePath": "_content/EcommerceApp",
+      "RelativePath": "Images/SizeTables/HoodieSize.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\SizeTables\\HoodieSize.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\SizeTables\\T-ShirtSize.jpg",
+      "SourceId": "EcommerceApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\",
+      "BasePath": "_content/EcommerceApp",
+      "RelativePath": "Images/SizeTables/T-ShirtSize.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\SizeTables\\T-ShirtSize.jpg"
     },
     {
       "Identity": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\Images\\StaticLogo.png",

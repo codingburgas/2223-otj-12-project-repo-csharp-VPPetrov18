@@ -17,22 +17,29 @@ namespace EcommerceApp.Controllers
         }
         public ActionResult Products()
         {
-            List<ProductsViewModel> products = _context.ApplicationProducts.Select(p => new ProductsViewModel
-            {
-                Id=p.Id,
-                ImageTitle = p.ImageTitle,
-                ProductName = p.ProductName,
-                Description = p.Description,
-                SizeS = p.SizeS,
-                SizeM = p.SizeM,
-                SizeL = p.SizeL,
-                SizeXL = p.SizeXL,
-                Color = p.Color,
-                Rating = p.Rating,
-                Price = p.Price
-            }).ToList();
+            List<ProductsViewModel> products;
 
-            return View(products);
+            // The 'using' statement ensures proper disposal of the database context, including closing open connections and
+            // returning them to the connection pool. This helps prevent exhaustion of the pool and ensures proper resource management.
+            using (var context = _context)
+            {
+                products = _context.ApplicationProducts.Select(p => new ProductsViewModel
+                {
+                    Id = p.Id,
+                    ImageTitle = p.ImageTitle,
+                    ProductName = p.ProductName,
+                    Description = p.Description,
+                    SizeS = p.SizeS,
+                    SizeM = p.SizeM,
+                    SizeL = p.SizeL,
+                    SizeXL = p.SizeXL,
+                    Color = p.Color,
+                    Rating = p.Rating,
+                    Price = p.Price
+                }).ToList();
+
+                return View(products);
+            }
         }
 
 
