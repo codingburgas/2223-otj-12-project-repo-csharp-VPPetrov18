@@ -45,12 +45,12 @@
     <div class="product-details">
         <h1>@Model.ProductName</h1>
         <p>@Model.Description</p>
-        <p>Color: @Model.Color</p>
-        <p>Rating <span class="fa fa-star checked"></span>: @Model.Rating/5
+        <p>Цвят: @Model.Color</p>
+        <p>Оценка <span class="fa fa-star checked"></span>: @Model.Rating/5
             &nbsp;
             @if (User.Identity.IsAuthenticated)
             {
-                <b><a style="cursor:pointer; color:white;" onclick="openForm()">Give a review</a></b>
+                <b><a style="cursor:pointer; color:white;" onclick="openForm()">Дайте отзив</a></b>
             }
         </p>
 
@@ -61,11 +61,11 @@
                 <div id="myForm">
                     <div id="myFormContent">
                         <span class="close" onclick="closeForm()">&times;</span>
-                        <h2>Give your opinion about the product</h2>
+                        <h2>Дайте своето мнение за продукта</h2>
                         <form onsubmit="submitForm(event)">
                             <input type="hidden" name="productId" value="@Model.Id" />
                             <div class="form-group">
-                                <label for="grade">Grade:</label>
+                                <label for="grade">Оценка:</label>
                                 <br/>
                                 
                                 <div class="rate">
@@ -84,13 +84,13 @@
                             <br/>
                                 <br />
                             <div class="form-group">
-                                <label for="description">Description:</label>
+                                <label for="description">Описание:</label>
                                 <textarea class="form-control" id="description" name="description"></textarea>
                             </div>
                             <br/><br/>
                             <div class="myButton">
                                 <button type="submit" onclick="submitForm(event)">
-                                    Submit
+                                    Изпрати
                                     <div class="arrow-wrapper">
                                         <div class="arrow"></div>
 
@@ -110,10 +110,10 @@
 
 
 
-        <b><p>Price: @Model.Price.ToString("C")</p></b>
+        <b><p>Цена: @Model.Price.ToString("C")</p></b>
         <div class="product-sizes">
             <form>
-                <label for="size">Size:</label>
+                <label for="size">Размер:</label>
                 <select id="size" name="size">
                     @if (Model.SizeS)
                     {
@@ -137,13 +137,13 @@
         @if (User.Identity.IsAuthenticated)
         {
         <div class="discount-container">
-            <label for="discount-code">Discount Code:</label>
+            <label for="discount-code">Код за отстъпка:</label>
             <input type="text" id="discount-code" name="discount-code">
-            <button class="apply-discount">Apply</button>
+            <button class="apply-discount">Приложи</button>
             <p id="discount-message"></p>
         </div>
         }
-        <button class="add-to-cart">Add to Cart</button>
+        <button class="add-to-cart">Добавяне в кошницата</button>
     </div>
 </div>
 
@@ -161,7 +161,7 @@
                 if (discountCode === 'WELCOME') {
                     // apply 20% discount to the price
                     var newPrice = parseFloat('@Model.Price') * 0.8;
-                    $('.product-details p:contains("Price:")').html('Price: $' + newPrice.toFixed(2).toString());
+                    $('.product-details p:contains("Цена:")').html('Цена: $' + newPrice.toFixed(2).toString());
 
 
                     discountMessage.text('The code is successfully applied!');

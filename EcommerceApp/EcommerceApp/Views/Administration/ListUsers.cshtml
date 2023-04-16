@@ -5,20 +5,20 @@
     ViewBag.Title = "All Users";
 }
 
-<h1>All Users</h1>
+<h1>Всички потребители</h1>
 
 @if (Model.Any())
 {
     <a asp-area="Identity" asp-page="/Account/Register"
    class="btn btn-primary mb-3" style="width:auto">
-        Add new user
+        Добавяне на нов потребител
     </a>
 
     foreach (var user in Model)
     {
         <div class="card mb-3">
             <div class="card-header">
-                User Id : @user.Id
+               Потребителски номер : @user.Id
             </div>
             <div class="card-body">
                 <h5 class="card-title">@user.UserName</h5>
@@ -26,18 +26,18 @@
             <div class="card-footer">
                 <form asp-action="DeleteUser" asp-route-id="@user.Id" method="post">
                 <a asp-action="EditUser" asp-controller="Administration"
-           asp-route-id="@user.Id" class="btn btn-primary">Edit</a>
+           asp-route-id="@user.Id" class="btn btn-primary">Редактиране</a>
 
                  <span id="confirmDeleteSpan_@user.Id" style="display:none">
-                  <span>Are you sure you want to delete?</span>
-                <button type="submit" class="btn btn-danger">Yes</button>
+                  <span>Сигурен ли сте, че искате да изтриете този запис?</span>
+                <button type="submit" class="btn btn-danger">Да</button>
                 <a href="#" class="btn btn-primary"
-                   onclick="confirmDelete('@user.Id', false)">No</a>
+                   onclick="confirmDelete('@user.Id', false)">Не</a>
                     </span>
 
                     <span id="deleteSpan_@user.Id">
                         <a href="#" class="btn btn-danger"
-                           onclick="confirmDelete('@user.Id', true)">Delete</a>
+                           onclick="confirmDelete('@user.Id', true)">Изтрий</a>
                     </span>
                 </form>
             </div>
@@ -48,15 +48,15 @@ else
 {
     <div class="card">
         <div class="card-header">
-            No users created yet
+            Няма потребители
         </div>
         <div class="card-body">
             <h5 class="card-title">
-                Use the button below to create a user
+                Използвайте бутона долу за създаването на потребител
             </h5>
             <a class="btn btn-primary" style="width:auto"
            asp-area="Identity" asp-page="/Account/Register">
-                Add new user
+                Добавяне на потребител
             </a>
         </div>
     </div>

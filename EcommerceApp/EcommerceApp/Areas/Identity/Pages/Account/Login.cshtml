@@ -10,16 +10,16 @@
 
 
 <div class="login-box">
-    <p>Login</p>
+    <p>Влез</p>
     <form id="account" method="post">
         <div class="user-box">
             <input required="" name="Input.Email" type="text" autocomplete="username" aria-required="true">
-            <label asp-for="Input.Email">Email</label>
+            <label asp-for="Input.Email">Имейл</label>
             <span asp-validation-for="Input.Email"></span>
         </div>
         <div class="user-box">
             <input required="" name="Input.Password" type="password" autocomplete="current-password" aria-required="true">
-            <label asp-for="Input.Password">Password</label>
+            <label asp-for="Input.Password">Парола</label>
             <span asp-validation-for="Input.Password"></span>
         </div>
 
@@ -28,11 +28,11 @@
         <span></span>
         <span></span>
        
-        <button id="login-submit" type="submit">Log in</button>
+        <button id="login-submit" type="submit">Влез</button>
         
     </form>
     <br></br>
-    <p>Don't have an account? <a href="@Url.Content("~/Identity/Account/Register")" class="a2">Sign up!</a></p>
+    <p>Нямаш все още акаунт? <a href="@Url.Content("~/Identity/Account/Register")" class="a2">Направи си!</a></p>
 </div>
 
 

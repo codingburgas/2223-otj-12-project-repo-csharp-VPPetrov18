@@ -7,17 +7,17 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<h1>Edit User</h1>
+<h1>Редактиране на потребител</h1>
  
 <form method="post" class="mt-3"  id="editUserForm">
     <div class="form-group row">
-        <label asp-for="Id" class="col-sm-2 col-form-label"></label>
+        <label asp-for="Id" class="col-sm-2 col-form-label">Номер</label>
         <div class="col-sm-10">
             <input asp-for="Id" disabled class="form-control">
         </div>
     </div>
     <div class="form-group row">
-        <label asp-for="Email" class="col-sm-2 col-form-label"></label>
+        <label asp-for="Email" class="col-sm-2 col-form-label">Имейл</label>
         <div class="col-sm-10">
             <input asp-for="Email" class="form-control">
             <span asp-validation-for="Email" class="text-danger"></span>
@@ -26,13 +26,13 @@
  
  
     <div class="form-group row">
-        <label asp-for="FirstName" class="col-sm-2 col-form-label"></label>
+        <label asp-for="FirstName" class="col-sm-2 col-form-label">Име</label>
         <div class="col-sm-10">
             <input asp-for="FirstName" class="form-control">
         </div>
     </div>
     <div class="form-group row">
-        <label asp-for="LastName" class="col-sm-2 col-form-label"></label>
+        <label asp-for="LastName" class="col-sm-2 col-form-label">Фамилия</label>
         <div class="col-sm-10">
             <input asp-for="LastName" class="form-control">
         </div>
@@ -45,29 +45,29 @@
     <div class="form-group row">
         <div class="col-sm-10">
  
-            <button class="btn btn-primary" onclick="openForm()">Update</button>
+            <button class="btn btn-primary" onclick="openForm()">Актуализирай</button>
             <div id="myForm">
                 <div id="myFormContent">
                     <span class="close" onclick="closeForm()">&times;</span>
-                    <h2>Update a user</h2>
+                    <h2>Актуализиране на данни</h2>
                     <form onsubmit="submitForm(event)">
-                        <label for="email">AdminEmail:</label>
+                        <label for="email">Административен имейл:</label>
                         <input type="email" id="email" name="AdminEmail" required><br><br>
-                        <label for="password">AdminPassword:</label>
+                        <label for="password">Административна парола:</label>
                         <input type="password" id="password" name="Adminpassword" required><br><br>
-                        <button type="submit" class="btn btn-primary" onclick="submitForm(event)">Update</button>
+                        <button type="submit" class="btn btn-primary" onclick="submitForm(event)">Актуализирай</button>
                     </form>
                 </div>
             </div>
  
-            <a asp-action="ListUsers" class="btn btn-primary">Cancel</a>
+            <a asp-action="ListUsers" class="btn btn-secondary">Отмяна</a>
         </div>
     </div>
  
     <br/>
     <div class="card">
         <div class="card-header">
-            <h3>User Roles</h3>
+            <h3>Потребителски роли</h3>
         </div>
         <div class="card-body">
             @if (Model.Roles.Any())
@@ -79,12 +79,12 @@
             }
             else
             {
-                <h5 class="card-title">None at the moment</h5>
+                <h5 class="card-title">Няма налични в момента</h5>
             }
         </div>
         <div class="card-footer">
             <a href="@Url.Action("ListRoles", "Administration")" style="width:auto" class="btn btn-primary">
-                Manage Roles
+                Управление на роли
             </a>
         </div>
     </div>

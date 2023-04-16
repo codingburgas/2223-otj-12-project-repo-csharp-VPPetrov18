@@ -1,7 +1,7 @@
 ﻿@page
 @model EmailModel
 @{
-    ViewData["Title"] = "Manage Email and Username";
+    ViewData["Title"] = "Редактирай имейл и потребителско име";
     ViewData["ActivePage"] = ManageNavPages.Email;
 }
 
@@ -26,18 +26,18 @@
             {
                 <div class="form-floating">
                     <input asp-for="Email" class="form-control" disabled />
-                    <label asp-for="Email" class="form-label"></label>
+                    <label asp-for="Email" class="form-label">Имейл</label>
                     </div>
             }
             <br/>
             <div class="form-floating">
                 <input asp-for="Input.NewEmail" class="form-control" autocomplete="email" aria-required="true" />
-                <label asp-for="Input.NewEmail" class="form-label"></label>
+                <label asp-for="Input.NewEmail" class="form-label">Нов Имейл</label>
                 <span asp-validation-for="Input.NewEmail" class="text-danger"></span>
                 </div>
                 <br/>
                 <div class="UserButton">
-            <button id="change-email-button" type="submit" asp-page-handler="ChangeEmail">Change email & username</button>
+            <button id="change-email-button" type="submit" asp-page-handler="ChangeEmail">Запази</button>
                 </div>
         </form>
     </div>

@@ -5,19 +5,19 @@
     ViewBag.Title = "All Roles";
 }
 
-<h1>All Roles</h1>
+<h1>Всички роли</h1>
 
 @if(Model.Any())
 {
     <a class="btn btn-primary mb-3" style="width:auto" asp-action="CreateRole"
-   asp-controller="administration">Add new role</a>
+   asp-controller="administration">Добави нова роля</a>
     foreach(var role in Model)
     {
         
 
         <div class="card mb-3">
             <div class="card-header">
-                Role Id : @role.Id
+                Номер на роля : @role.Id
             </div>
             <div class="card-body">
                 <h5 class="card-title">@role.Name</h5>
@@ -26,18 +26,18 @@
                 <form asp-action="DeleteRole" asp-route-id="@role.Id" method="post">
                 <a class="btn btn-primary" asp-action="EditRole"
                 asp-controller="Administration" asp-route-id="@role.Id">
-                Edit
+                Редактирай
             </a>
                     <span id="confirmDeleteSpan_@role.Id" style="display:none">
-                        <span>Are you sure you want to delete?</span>
-                        <button type="submit" class="btn btn-danger">Yes</button>
+                        <span>Сигурен ли сте, че искате да изтриете записа?</span>
+                        <button type="submit" class="btn btn-danger">Да</button>
                         <a href="#" class="btn btn-primary"
-                           onclick="confirmDelete('@role.Id', false)">No</a>
+                           onclick="confirmDelete('@role.Id', false)">Не</a>
                     </span>
 
                     <span id="deleteSpan_@role.Id">
                         <a href="#" class="btn btn-danger"
-                           onclick="confirmDelete('@role.Id', true)">Delete</a>
+                           onclick="confirmDelete('@role.Id', true)">Изтрий</a>
                     </span>
                 </form>
             </div>

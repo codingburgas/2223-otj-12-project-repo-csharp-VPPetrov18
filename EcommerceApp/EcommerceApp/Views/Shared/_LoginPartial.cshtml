@@ -34,6 +34,7 @@
          {
             color: #BABABA;
          }
+        
     </style>
 </head>
 <ul class="navbar-nav custom-class">
@@ -45,24 +46,24 @@
         <li class="nav-item dropdown">
         <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink"
         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Manage
+        Управлявай
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <a class="dropdown-item" asp-controller="Administration"
-        asp-action="ListUsers">Users</a>
+        asp-action="ListUsers">Потребители</a>
         <a class="dropdown-item" asp-controller="Administration"
-        asp-action="ListRoles">Roles</a>
+        asp-action="ListRoles">Роли</a>
         </div>
         </li>
         }
         
 
     <li class="nav-item">
-        <a id="manage" class="login-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+        <a id="manage" class="login-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Привет @UserManager.GetUserName(User)!</a>
     </li>
     <li class="nav-item">
         <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button id="logout" type="submit">Logout</button>
+                <button id="logout" type="submit">Излез</button>
         </form>
     </li>
 }
@@ -70,10 +71,10 @@ else
 {
         
         <li class="nav-item">
-            <a class="register-link" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="register-link" id="register" asp-area="Identity" asp-page="/Account/Register">Регистрация</a>
         </li>
         <li class="nav-item">
-            <a class="login-link" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            <a class="login-link" id="login" asp-area="Identity" asp-page="/Account/Login">Влез</a>
         </li>
         
 }
