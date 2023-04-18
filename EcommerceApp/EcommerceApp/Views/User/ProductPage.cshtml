@@ -47,11 +47,13 @@
         <p>@Model.Description</p>
         <p>Цвят: @Model.Color</p>
         <p>
-            <a href="@Url.Action("Reviews", "User", new { productId = Model.Id })">Оценка</a> <span class="fa fa-star checked"></span>: @Model.Rating/5
+            Оценка <span class="fa fa-star checked"></span>: @Model.Rating/5
             &nbsp;
             @if (User.Identity.IsAuthenticated)
             {
                 <b><a style="cursor:pointer; color:white;" onclick="openForm()">Дайте отзив</a></b>
+                <b>/</b>
+                <b><a style="cursor:pointer; color:white; text-decoration: none;" href="@Url.Action("Reviews", "User", new { productId = Model.Id })">Ревюта</a></b>
             }
         </p>
 

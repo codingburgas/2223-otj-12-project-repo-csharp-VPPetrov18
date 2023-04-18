@@ -5,6 +5,10 @@
             text-align:center;
             color:white;
         }
+        h2{
+             text-align:center;
+            color:white;
+        }
         body{
             background-image: url('/Backgrounds/ProductsBackground.jpg');
             background-size: cover;
@@ -12,42 +16,89 @@
             height: 100%;
             margin: 0;
         }
-        .Forms
-        {
-            margin: auto;
+        .center{
+                 display: flex;
+        flex-direction: column;
+        align-items: center;
         }
-        .Description
-        {
-            margin-left:350px;
-          
+         .card {
+          width: 60%;
+          margin: 0 auto;
+          background-color:#0F100F;
         }
-       
+        .card-body{
+            color:white;
+        }
+        .fa{
+            color:orange;
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <h1>Ревюта</h1>
 
+
 @if (Model.Count == 0)
 {
-    <p>No reviews yet.</p>
+    <h2>No reviews yet.</h2>
 }
 else
 {
-        <div class="Forms">
+        
         @foreach (var review in Model)
         {
-            <div class="col-md-6">
+        
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="Description">Description:</h5>
-                        <p class="Description">@review.Description</p>
-                        <img src="~/Images/Anonymous.png" alt="user" width="200" height="200">
+                        <div class="center">
+                        <img src="~/Images/Anonymous.png" alt="user" height="200" width="200">
                         <h5 class="card-title">@review.User.UserName</h5>
+                        </div>
+                        <br/><br/>
+                        <h6>Description:</h6>
+                        <p class="card-text">@review.Description</p>
+                        <p class="card-text text-muted">
+                        Rating:
+                        @if(@review.Grade==1)
+                        {
+                            <span class="fa fa-star checked"></span>
+                        }
+                        @if(@review.Grade==2)
+                        {
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        }
+                        @if(@review.Grade==3)
+                        {
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        }
+                        @if(@review.Grade==4)
+                        {
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        }
+                        @if (@review.Grade == 5)
+                        {
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        }
+
+
+                         </p>
                         
-                        <p class="card-text"><small class="text-muted">Rating: @review.Grade</small></p>
                     </div>
                 </div>
-            </div>
+            
         }
-    </div>
+    
 }
+
 
