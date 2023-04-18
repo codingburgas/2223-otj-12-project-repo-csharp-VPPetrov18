@@ -70,7 +70,7 @@
 /* For screens larger than or equal to 768px (e.g. desktops) */
 @media (min-width: 768px) {
     .content {
-        margin-top: 150px;
+        margin-top: 190px;
     }
 }
 

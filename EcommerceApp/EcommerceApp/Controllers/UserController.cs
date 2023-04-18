@@ -121,6 +121,7 @@ namespace EcommerceApp.Controllers
 
             if (product != null)
             {
+                averageGrade = (double)System.Math.Round(averageGrade, 2);
                 product.Rating = averageGrade;
                 _context.SaveChanges();
             }
@@ -140,6 +141,17 @@ namespace EcommerceApp.Controllers
         public ActionResult Policies()
         {
             return View();
+        }
+
+
+        public IActionResult Reviews(int productId)
+        {
+            var reviews = _context.ProductReviews
+                .Include(r => r.User)
+                .Where(r => r.ProductId == productId)
+                .ToList();
+
+            return View(reviews);
         }
 
     }

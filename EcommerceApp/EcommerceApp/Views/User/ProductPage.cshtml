@@ -46,7 +46,8 @@
         <h1>@Model.ProductName</h1>
         <p>@Model.Description</p>
         <p>Цвят: @Model.Color</p>
-        <p>Оценка <span class="fa fa-star checked"></span>: @Model.Rating/5
+        <p>
+            <a href="@Url.Action("Reviews", "User", new { productId = Model.Id })">Оценка</a> <span class="fa fa-star checked"></span>: @Model.Rating/5
             &nbsp;
             @if (User.Identity.IsAuthenticated)
             {
