@@ -5,37 +5,7 @@
 @inject UserManager<ApplicationUser> UserManager
 @inject SignInManager<ApplicationUser> signInManager;
 <head>
-    <style>
-        .dropdown-menu {
-            margin-left: -120px;
-            background-color: transparent;
-            border: none;
-           
-            
-        }
-        .dropdown-item
-        {
-            color:white;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px #000000;
-            text-decoration: none;
-        }
-        .dropdown-toggle
-        {
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px #000000;
-            text-decoration: none;
-            margin-left:-120px;
-        }
-
-         .dropdown-toggle:hover
-         {
-            color: #BABABA;
-         }
-        
-    </style>
+    <link href="~/css/_loginpartial.css" rel="stylesheet" />
 </head>
 <ul class="navbar-nav custom-class">
 @if (SignInManager.IsSignedIn(User))
