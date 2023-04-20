@@ -105,12 +105,28 @@
       "PackagePath": "staticwebassets\\css\\ProductsStyle.css"
     },
     {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\Reviews.css",
+      "PackagePath": "staticwebassets\\css\\Reviews.css"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\_LoginPartial.css",
+      "PackagePath": "staticwebassets\\css\\_LoginPartial.css"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
       "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\js\\jquery-3.6.0.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.6.0.min.js"
     },
     {
       "Id": "C:\\Users\\VPPetrov18\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\js\\site.js",

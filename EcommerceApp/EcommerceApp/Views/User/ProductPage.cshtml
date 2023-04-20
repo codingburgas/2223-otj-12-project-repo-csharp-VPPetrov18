@@ -54,6 +54,10 @@
                 <b>/</b>
                 <b><a style="cursor:pointer; color:white; text-decoration: none;" href="@Url.Action("Reviews", "User", new { productId = Model.Id })">Ревюта</a></b>
             }
+            else
+            {
+                <b><a style="cursor:pointer; color:white; text-decoration: none;" href="@Url.Action("Reviews", "User", new { productId = Model.Id })">Ревюта</a></b>
+            }
         </p>
 
         <div class="form-group row">
