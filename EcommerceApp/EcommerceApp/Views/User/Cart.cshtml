@@ -1,0 +1,132 @@
+﻿@model List<CartViewModel>
+<head>
+    <link href="~/css/cart.css" rel="stylesheet" />
+</head>
+
+
+
+
+<h1>Твоята количка</h1>
+<br/>
+<br/>
+<br/>
+@if (Model.Count == 0)
+{
+    <p>Твоята количка е празна</p>
+}
+else
+{
+   
+    <div class="cart-page-container">
+    <table>
+        <thead>
+            <tr>
+                <th><h5>Продукт:</h5></th>
+                <th><h5>Размер:</h5></th>
+                <th><h5>Количество:</h5></th>
+                <th><h5>Цена:</h5></th>
+                <th><h5>Общо:</h5></th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int count = 0;
+            }
+            @foreach (var item in Model)
+            {
+                    
+                        float quantity = item.Quantity;
+                        float subtotal = quantity * item.Price;
+                        count++;
+
+                <tr>
+                    
+                    <td>
+                        <div class="product">   
+                           <a asp-action="ProductPage" asp-route-id="@item.ProductId" class="view-button"> <img src="@Url.Content("/Images/Products/" + item.ImageTitle + ".png")" height="200" width="200" alt="@item.ProductName" /></a>
+                            <div class="product-details">
+                                @item.ProductName
+                            </div>
+                        </div>
+                    </td>
+                       
+     
+                    <td>@item.Size</td>
+                    <td>
+                            <div class="quantity">
+                                <input type="number" min="1" max="20" value="@item.Quantity" id="@item.Id" class="small-gray-input" />
+                            </div>
+                    </td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@subtotal.ToString("C2")</td>
+                    <td>
+                            <div class="deleteButton">
+                            <button onclick="location.href='@Url.Action("RemoveFromCart", new { id = item.Id })'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                    </td>
+
+                    
+                </tr>
+
+                @if (!item.Equals(Model.Last()))
+                {
+                    <tr>
+                        <td colspan="6">
+                            <hr />
+                        </td>
+                    </tr>
+                }
+                
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"><h3>Крайна сума: @Model.Sum(item => item.Quantity * item.Price).ToString("C2")</h3></td>
+                    <td></td>
+                    
+                <td>
+
+                        <button onclick="location.href='@Url.Action("Checkout", new{price = @Model.Sum(item => item.Quantity * item.Price), itemCount = count })'" class="Btn">
+                            Плати
+                            <svg class="svgIcon" viewBox="0 0 576 512"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
+                        </button>
+
+                </td>
+                
+            </tr>
+        </tfoot>
+    </table>
+    </div>
+
+    
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+    $('input[type="number"]').change(function () {
+        var quantity = $(this).val();
+                var id = $(this).attr('id');
+        $.ajax({
+            type: "POST",
+                    url: "/User/UpdateQuantityCartItem",
+            data: { id: id, quantity: quantity },
+            success: function () {
+                        location.reload();
+            },
+            error: function () {
+                alert('Error occurred while updating item');
+            }
+        });
+    });
+});
+
+    </script>
+}

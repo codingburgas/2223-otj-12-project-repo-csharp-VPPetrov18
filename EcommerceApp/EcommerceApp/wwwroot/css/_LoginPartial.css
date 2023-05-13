@@ -23,3 +23,7 @@
     .dropdown-toggle:hover {
         color: #BABABA;
     }
+
+li {
+    margin-right: 10px;
+}

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NpqQdYhWMQ/2g/XdvgrnfaRn7dmIhm5xI+ycyTAgb+k=",
+  "Hash": "C+Piw1DabhTAlffuS/GMDaAbJlf1PI7FPcDqXZ8Z4D4=",
   "Source": "EcommerceApp",
   "BasePath": "_content/EcommerceApp",
   "Mode": "Default",
@@ -1122,6 +1122,40 @@
       "OriginalItemSpec": "wwwroot\\css\\_LoginPartial.css"
     },
     {
+      "Identity": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\Cart.css",
+      "SourceId": "EcommerceApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\",
+      "BasePath": "_content/EcommerceApp",
+      "RelativePath": "css/Cart.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Cart.css"
+    },
+    {
+      "Identity": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\Checkout.css",
+      "SourceId": "EcommerceApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\",
+      "BasePath": "_content/EcommerceApp",
+      "RelativePath": "css/Checkout.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Checkout.css"
+    },
+    {
       "Identity": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\EditUser.css",
       "SourceId": "EcommerceApp",
       "SourceType": "Discovered",
@@ -1188,6 +1222,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\LoginAndRegister.css"
+    },
+    {
+      "Identity": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\Order.css",
+      "SourceId": "EcommerceApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\",
+      "BasePath": "_content/EcommerceApp",
+      "RelativePath": "css/Order.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Order.css"
     },
     {
       "Identity": "C:\\Users\\petro\\source\\repos\\2223-otj-12-project-repo-csharp-VPPetrov18\\EcommerceApp\\EcommerceApp\\wwwroot\\css\\Policies.css",

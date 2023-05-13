@@ -1,0 +1,85 @@
+﻿@model List<OrderViewModel>
+
+<head>
+    <link href="~/css/order.css" rel="stylesheet" />
+</head>
+
+
+@if (Model.Count == 0)
+{
+    <h2>Няма данни за плащане все още.</h2>
+}
+else
+{
+
+    @foreach (var item in Model)
+    {
+        //If I want to pass the card for next step it will pass the input name (Card number) if i want to pass
+        //all the infromation maybe to make more inputs but hidden
+      @* <form id="paymentForm" method="post" action="@Url.Action("ProcessPayment", "Payment")">*@
+                <div class="card mb-3">
+                    <div class="card-body">
+                <div class="leftSide">
+                        <h5><strong>Адрес:</strong></h5>
+                        <p><strong>Име:</strong> @item.Names</p>
+                        <p><strong>Имейл:</strong> @item.Email</p>
+                        <p><strong>Жилищен адрес:</strong> @item.Address</p>
+                        <p><strong>Град:</strong> @item.City</p>
+                        <p><strong>Държава:</strong> @item.State</p>
+                        <p><strong>Zip код:</strong> @item.Zip</p>
+                        </div>
+                <div class="rightSide">
+                        <h5><strong>Данни за карта:</strong></h5>
+                        <p><strong>Собственик:</strong> @item.CardName</p>
+                        <p><strong>Номер на карта:</strong> @item.CardNumber</p>
+                        <p><strong>Изтичащ месец:</strong> @item.ExpMonth</p>
+                        <p><strong>Изтичаща година:</strong> @item.ExpYear</p>
+                        <p><strong>CVV:</strong> @item.CVV</p>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="selectedCard"  value="@item.CardNumber" onclick="uncheckOtherCheckboxes(this)"> Избери този адрес и карта
+                        </label>
+                    </div>
+                    <br>
+                    <button onclick="location.href='@Url.Action("RemoveAnOrderDetail", new { id = item.Id })'" class="btn btn-danger">Изтрий</button>
+                   
+                </div>
+                    </div>
+                </div>
+
+             @*</form>*@
+           
+     
+
+    }
+    <br><br><br>
+    <div class="button-container">
+
+            <div class="left">
+            <button onclick="location.href='@Url.Action("Checkout")'" class="Btn">Нови данни +</button>
+        </div>
+       <div class="right">
+          <button class="Btn">
+        Плати
+        <svg class="svgIcon" viewBox="0 0 576 512"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
+    </button>
+   </div>
+    </div>
+
+  
+
+}
+
+@section Scripts
+{
+<script>
+function uncheckOtherCheckboxes(checkbox) {
+  var checkboxes = document.getElementsByName('selectedCard');
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i] !== checkbox) {
+      checkboxes[i].checked = false;
+    }
+  }
+}
+</script>
+}

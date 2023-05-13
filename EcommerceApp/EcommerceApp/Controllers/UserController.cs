@@ -1,10 +1,16 @@
 ﻿using EcommerceApp.Areas.Identity.Data;
 using EcommerceApp.Models;
+using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing;
+using System.Net;
+using System.Reflection.Metadata;
 using System.Security.Claims;
-
+using System.Security.Policy;
+using System.Web;
 namespace EcommerceApp.Controllers
 {
     public class UserController : Controller
@@ -162,6 +168,222 @@ namespace EcommerceApp.Controllers
                 .ToList();
 
             return View(reviews);
+        }
+
+        public IActionResult AddToCart(int productId, string size, string imageTitle, string productName, float price)
+        {
+            productName= HttpUtility.HtmlDecode(productName);
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // Retrieve the user's current cart from the database
+            var userCart = _context.CartItems
+                .FirstOrDefault(c => c.UserId == userId && c.ProductId == productId && c.Size== size);
+
+            if (userCart == null)
+            {
+                // If the user's cart doesn't exist yet, create a new one
+                userCart = new CartViewModel
+                {
+                    UserId = userId,
+                    ProductId = productId,
+                    Quantity = 1,
+                    Size = size,
+                    ImageTitle = imageTitle,
+                    Price = price,
+                    ProductName = productName
+                };
+
+                _context.CartItems.Add(userCart);
+            }
+            else
+            {
+                // If the user's cart already exists, update the quantity
+                userCart.Quantity += 1;
+                _context.CartItems.Update(userCart);
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Cart");
+        }
+
+        public IActionResult Cart()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // Retrieve all the items in the user's cart from the database
+            var cartItems = _context.CartItems
+                .Where(c => c.UserId == userId)
+                .ToList();
+
+            // Create a new list to store the cart items
+            var cartList = new List<CartViewModel>();
+
+            // Loop through the cart items and add them to the list
+            foreach (var item in cartItems)
+            {
+                var cartItem = new CartViewModel
+                {
+                    Id = item.Id,
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity,
+                    Size = item.Size,
+                    ImageTitle = item.ImageTitle,
+                    Price = item.Price,
+                    ProductName = item.ProductName
+                };
+
+                cartList.Add(cartItem);
+            }
+            
+
+            return View(cartList);
+        }
+
+        public IActionResult RemoveFromCart(int id)
+        {
+
+            // Find the cart item with the specified id.
+            var cartItem = _context.CartItems.FirstOrDefault(c => c.Id == id);
+
+            // Check if the cart item was found.
+            if (cartItem == null)
+            {
+                // Return a 404 error.
+                return NotFound();
+            }
+
+            // Remove the cart item from the database and save changes.
+            _context.CartItems.Remove(cartItem);
+            _context.SaveChanges();
+
+            // Redirect to the Cart page.
+            return RedirectToAction("Cart");
+        }
+
+
+       
+        public IActionResult UpdateQuantityCartItem(int id, int quantity)
+        {
+            var cartItem = _context.CartItems.FirstOrDefault(item => item.Id == id);
+            if (cartItem == null)
+            {
+                return NotFound();
+            }
+
+            cartItem.Quantity = quantity;
+            _context.SaveChanges();
+
+            return RedirectToAction("Cart");
+        }
+
+       
+
+        public IActionResult Checkout(float price, int itemCount)
+        {
+            ViewData["Price"] = price;
+            ViewData["ItemCount"] = itemCount;
+            return View();
+        }
+
+
+        public IActionResult SaveOrderDetails(string firstname, string email, string address,
+            string city, string state, string zip, string cardname, string cardnumber, string expmonth,
+            string expyear, int cvv)
+        {
+            if (string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(address) ||
+        string.IsNullOrEmpty(city) || string.IsNullOrEmpty(state) || string.IsNullOrEmpty(zip) ||
+        string.IsNullOrEmpty(cardname) || string.IsNullOrEmpty(cardnumber) || string.IsNullOrEmpty(expmonth) ||
+        string.IsNullOrEmpty(expyear) || cvv == 0)
+            {
+                TempData["ErrorMessage"] = "Моля попълнете всички полета";
+                
+                return RedirectToAction("Checkout");
+            }
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            var order = new OrderViewModel
+            {
+                Names = firstname,
+                Email = email,
+                Address = address,
+                City = city,
+                State = state,
+                Zip = zip,
+                CardName = cardname,
+                CardNumber = cardnumber,
+                ExpMonth = expmonth,
+                ExpYear = expyear,
+                CVV = cvv,
+                UserId = userId
+            };
+            _context.Order.Add(order);
+            _context.SaveChanges();
+
+
+            return RedirectToAction("Order");
+        }
+
+
+        public IActionResult Order()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // Retrieve all the items in the user's cart from the database
+            var orderDetails = _context.Order
+                .Where(c => c.UserId == userId)
+                .ToList();
+
+            // Create a new list to store the cart items
+            var orderList = new List<OrderViewModel>();
+
+            // Loop through the cart items and add them to the list
+            foreach (var item in orderDetails)
+            {
+                var orderDetail = new OrderViewModel
+                {
+                    Id=item.Id,
+                    Names = item.Names,
+                    Email = item.Email,
+                    Address = item.Address,
+                    City = item.City,
+                    State = item.State,
+                    Zip = item.Zip,
+                    CardName = item.CardName,
+                    CardNumber = item.CardNumber,
+                    ExpMonth = item.ExpMonth,
+                    ExpYear = item.ExpYear,
+                    CVV = item.CVV,
+                    UserId = item.UserId
+                };
+
+                orderList.Add(orderDetail);
+            }
+
+
+            return View(orderList);
+        }
+
+        public IActionResult RemoveAnOrderDetail(int id)
+        {
+
+            // Find the cart item with the specified id.
+            var orderDetail = _context.Order.FirstOrDefault(c => c.Id == id);
+
+            // Check if the cart item was found.
+            if (orderDetail == null)
+            {
+                // Return a 404 error.
+                return NotFound();
+            }
+
+            // Remove the cart item from the database and save changes.
+            _context.Order.Remove(orderDetail);
+            _context.SaveChanges();
+
+            // Redirect to the Cart page.
+            return RedirectToAction("Order");
         }
 
     }

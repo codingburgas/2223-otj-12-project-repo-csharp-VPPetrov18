@@ -6,31 +6,31 @@
 </head>
 
 <div class="product-container">
-   
-        @{
-            var imgPath1 = "/Images/Products/" + (@Model.ImageTitle + ".png");
-            var imgPath2 = "/Images/Products/" + (@Model.ImageTitle + "-1.png");
-            var imgPath3 = "/Images/Products/" + (@Model.ImageTitle + "-2.png");
-        }
 
- 
+    @{
+        var imgPath1 = "/Images/Products/" + (@Model.ImageTitle + ".png");
+        var imgPath2 = "/Images/Products/" + (@Model.ImageTitle + "-1.png");
+        var imgPath3 = "/Images/Products/" + (@Model.ImageTitle + "-2.png");
+    }
+
+
     <div class="slideshow-container">
 
         <div class="mySlides">
             <div class="numbertext">1 / 3</div>
-                <img src="@imgPath1" style="width:100%">
+            <img src="@imgPath1" style="width:100%">
 
         </div>
 
         <div class="mySlides">
             <div class="numbertext">2 / 3</div>
-                <img src="@imgPath2" style="width:100%">
+            <img src="@imgPath2" style="width:100%">
 
         </div>
 
         <div class="mySlides">
             <div class="numbertext">3 / 3</div>
-                <img src="@imgPath3" style="width:100%">
+            <img src="@imgPath3" style="width:100%">
 
         </div>
 
@@ -63,7 +63,7 @@
         <div class="form-group row">
             <div class="col-sm-10">
 
-                
+
                 <div id="myForm">
                     <div id="myFormContent">
                         <span class="close" onclick="closeForm()">&times;</span>
@@ -72,8 +72,8 @@
                             <input type="hidden" name="productId" value="@Model.Id" />
                             <div class="form-group">
                                 <label for="grade">Оценка:</label>
-                                <br/>
-                                
+                                <br />
+
                                 <div class="rate">
                                     <input type="radio" id="star5" name="rate" value="5" />
                                     <label for="star5" title="text">5 stars</label>
@@ -87,13 +87,13 @@
                                     <label for="star1" title="text">1 star</label>
                                 </div>
                             </div>
-                            <br/>
-                                <br />
+                            <br />
+                            <br />
                             <div class="form-group">
                                 <label for="description">Описание:</label>
                                 <textarea class="form-control" id="description" name="description"></textarea>
                             </div>
-                            <br/><br/>
+                            <br /><br />
                             <div class="myButton">
                                 <button type="submit" onclick="submitForm(event)">
                                     Изпрати
@@ -101,17 +101,17 @@
                                         <div class="arrow"></div>
 
                                     </div>
-                                
+
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
 
-                
+
             </div>
         </div>
-       
+
 
 
 
@@ -142,19 +142,24 @@
         </div>
         @if (User.Identity.IsAuthenticated)
         {
-        <div class="discount-container">
-            <label for="discount-code">Код за отстъпка:</label>
-            <input type="text" id="discount-code" name="discount-code">
-            <button class="apply-discount">Приложи</button>
-            <p id="discount-message"></p>
-        </div>
+            <div class="discount-container">
+                <label for="discount-code">Код за отстъпка:</label>
+                <input type="text" id="discount-code" name="discount-code">
+                <button class="apply-discount">Приложи</button>
+                <p id="discount-message"></p>
+            </div>
+            <button onclick="addToCart(@Model.Id)" class="add-to-cart">Добавяне в кошницата</button>
         }
-        <button class="add-to-cart">Добавяне в кошницата</button>
+        
     </div>
 </div>
 
 @section Scripts {
     <script>
+
+        var DiscountPrice=@Model.Price;
+
+
         //For the discount code
         $(function () {
             $('.apply-discount').on('click', function (e) {
@@ -169,6 +174,7 @@
                     var newPrice = parseFloat('@Model.Price') * 0.8;
                     $('.product-details p:contains("Цена:")').html('Цена: $' + newPrice.toFixed(2).toString());
 
+                    DiscountPrice=newPrice;
 
                     discountMessage.text('The code is successfully applied!');
                     discountMessage.css('color', 'green');
@@ -265,5 +271,27 @@
                     console.error(error);
                 });
         }
+
+
+        
+
+        //Ajax request for the Cart
+         function addToCart(productId) {
+            var size = document.getElementById("size").value;
+            var imageTitle = '@Model.ImageTitle';
+            var productName = '@Model.ProductName';
+             var price = DiscountPrice;
+        $.ajax({
+            url: "/User/AddToCart",
+            type: "POST",
+            data: {productId: productId, size: size, imageTitle: imageTitle, productName: productName, price: price},
+            success: function (result) {
+                alert("Продуктът е добавен успешно в кошницата.");
+            },
+            error: function (result) {
+                alert("Възникна грешка при добавянето на продукта в кошницата.");
+            }
+        });
+    }
     </script>
 }

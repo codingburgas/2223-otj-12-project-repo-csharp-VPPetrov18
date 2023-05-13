@@ -1,0 +1,146 @@
+﻿
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/Backgrounds/ProductsBackground.jpg');
+}
+
+tr {
+    color: white;
+    font-weight: bold;
+}
+
+h5{
+    font-weight:bold;
+}
+h1{
+    color:white;
+    font-weight:bold;
+}
+
+
+.product-details
+{
+    text-align:center;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+td, th {
+    padding: 20px;
+    font-weight: bold;
+}
+
+.cart-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+tfoot h3{
+    color:white;
+    margin-left:-250px;
+}
+
+
+@media screen and (max-width: 668px) {
+    tfoot h3 {
+        margin-left: -180px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    tfoot h3 {
+        margin-left: -50px;
+    }
+}
+
+.deleteButton button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: 2px solid rgb(231, 50, 50);
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px #333;
+    overflow: hidden;
+    transition: .3s;
+}
+
+
+    .deleteButton button:hover {
+        background-color: rgb(245, 207, 207);
+        transform: scale(1.1);
+        box-shadow: 0 0 4px #111;
+        transition: .3s;
+    }
+
+
+.small-gray-input {
+    background-color: gray;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    width: 40px;
+}
+
+
+/*Css for the Pay button*/
+.Btn {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 230, 230);
+    border: none;
+    color: black;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+.svgIcon {
+    width: 16px;
+}
+
+    .svgIcon path {
+        fill: black;
+    }
+
+.Btn::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%,-50%);
+    border-radius: 0;
+}
+
+.Btn:active {
+    transform: translate(5px,5px);
+    transition-duration: .3s;
+}

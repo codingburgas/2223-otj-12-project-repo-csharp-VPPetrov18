@@ -1,0 +1,101 @@
+﻿body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/Backgrounds/ProductsBackground.jpg');
+}
+.card {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #0F100F;
+}
+
+
+
+.card-body {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftSide {
+    width: 50%;
+}
+
+.rightSide {
+    width: 50%;
+}
+
+
+.btn
+{
+    margin-left:220px;
+}
+
+
+/*Css for the Pay button*/
+.Btn {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 230, 230);
+    border: none;
+    color: black;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+.svgIcon {
+    width: 16px;
+}
+
+    .svgIcon path {
+        fill: black;
+    }
+
+.Btn::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%,-50%);
+    border-radius: 0;
+}
+
+.Btn:active {
+    transform: translate(5px,5px);
+    transition-duration: .3s;
+}
+
+
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left{
+    margin-left:320px;
+}
+.right {
+    margin-right: 320px;
+}
